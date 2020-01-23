@@ -1,5 +1,9 @@
 # OnePlus 7Pro Android 10 Root Guidelines
 
+## Why to root
+
+Because Titanium is still the best way to back your phone. OnePlus switch's backup function still cause data loss. 
+
 ## How to root
 
 * `cd platform-tools`
