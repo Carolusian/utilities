@@ -1,0 +1,26 @@
+---
+- name: install v2ray
+  hosts: all
+
+  tasks:
+  - name: download v2ray installation script
+    get_url: url=https://install.direct/go.sh dest=/tmp/go.sh
+  
+  - name: install v2ray
+    shell: bash /tmp/go.sh
+  
+  - name: update config file
+    copy:
+      src: config.json
+      dest: /etc/v2ray/config.json
+  
+  - name: restart v2ray service
+    systemd:
+      name: v2ray
+      state: restarted
+
+  - name: disable firewalld
+    systemd: 
+      name: firewalld
+      state: stopped
+
